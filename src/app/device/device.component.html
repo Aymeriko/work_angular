@@ -1,0 +1,21 @@
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': deviceStatus === 'On',
+                'list-group-item-danger': deviceStatus === 'Off'}">
+  
+  <div style="width:20px;height:20px;background-color:red;" 
+  *ngIf="deviceStatus === 'Off'"></div>
+  
+    <h4>Device : {{ deviceName }}</h4>
+    <h4 [ngStyle]="{color: getColor()}">Status : {{ getStatus() }}</h4>    
+    <input type="text" class="form-control" [(ngModel)]="deviceName">
+    
+    <button class="btn btn-sm btn-success"
+    *ngIf="deviceStatus === 'Off'"
+    (click)="onSwitch()">On</button>
+    
+    <button class="btn btn-sm btn-danger"
+    *ngIf="deviceStatus === 'On'"
+    (click)="onSwitch()">Off</button>
+  
+
+  </li>
