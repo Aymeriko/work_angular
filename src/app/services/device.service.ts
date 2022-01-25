@@ -2,14 +2,17 @@ export class DeviceService {
   
   devices = [
     {
+      id: 1,
       name: 'Washing Machine',
       status: 'Off'
     },
     {
+      id: 2,
       name: 'Dishwasher',
       status: 'On'
     },
     {
+      id: 3,
       name: 'Phone',
       status: 'Off'
     }
@@ -48,6 +51,15 @@ export class DeviceService {
   onSwitchOffOne(i:number){
     this.devices[i].status = "Off";
   }
+
+  getDeviceById(id: number) {
+    const device = this.devices.find(
+      (s) => {
+        return s.id === id;
+      }
+    );
+    return device;
+}
 
 
 }

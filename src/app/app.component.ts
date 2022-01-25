@@ -9,7 +9,6 @@ import { DeviceService } from './services/device.service';
 export class AppComponent implements OnInit {
 
   isAuth = false;
-
   devices: any[] = [];
 
   constructor( private deviceService: DeviceService ) {

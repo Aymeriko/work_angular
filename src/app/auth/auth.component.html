@@ -1,1 +1,7 @@
 <p>auth works!</p>
+
+<p> 
+    <button class="btn btn-success" *ngIf="!authStatus" (click)="signIn()">Sign in</button>
+    <button class="btn btn-danger" *ngIf="authStatus" (click)="signOut()">Sign out</button>
+</p>
+<p>Status : {{ authStatus }}</p>
